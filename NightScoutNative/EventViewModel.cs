@@ -76,7 +76,7 @@ namespace NightScoutNative
 
 			ObservableCollection<NightScoutEvent> returnEvents = new ObservableCollection<NightScoutEvent>();
 
-			string sRestUrl = "https://lydia-nightscout.azurewebsites.net/api/v1/entries/sgv.json";
+			string sRestUrl = "https://lydia-nightscout.azurewebsites.net/api/v1/entries/sgv.json?[count]=20";
 			var uri = new Uri(string.Format(sRestUrl, string.Empty));
 
 			var response = await client.GetAsync(uri);
