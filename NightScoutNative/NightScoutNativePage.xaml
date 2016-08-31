@@ -11,6 +11,7 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="200" />
+
 		</Grid.RowDefinitions>
 
 		<Grid.ColumnDefinitions>
@@ -30,26 +31,28 @@
 		<Label Text="{Binding NsCurrentPumpStatus.activeInsulin}" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" />
 		<Label Text="{Binding NsCurrentPumpStatus.nextCalibrationTime}" HorizontalOptions="End"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
 		
-		<telerikChart:RadCartesianChart Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-		 <!-- <telerikChart:RadCartesianChart.BindingContext>
-		    <viewMoedls:EventsViewModel/>
-		  </telerikChart:RadCartesianChart.BindingContext>-->
+
+
+		<telerikChart:RadCartesianChart SelectionPaletteName="LightSelected" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+		  <!--<telerikChart:RadCartesianChart.BindingContext>
+		    <viewMoedls:CategoricalViewModel/>
+		  </telerikChart:RadCartesianChart.BindingContext>
+-->
 		  <telerikChart:RadCartesianChart.HorizontalAxis>
-		    <telerikChart:CategoricalAxis/>
-<!--				<telerikChart:DateTimeContinuousAxis />-->
+		    <telerikChart:DateTimeContinuousAxis LabelFormat="h:mm" GapLength="0.5" PlotMode="BetweenTicks" MajorStepUnit="Minute" MajorStep="15" />
 		  </telerikChart:RadCartesianChart.HorizontalAxis>
 		  <telerikChart:RadCartesianChart.VerticalAxis>
 		    <telerikChart:NumericalAxis/>
 		  </telerikChart:RadCartesianChart.VerticalAxis>
 		  <telerikChart:RadCartesianChart.Series>
-		    <telerikChart:LineSeries ItemsSource="{Binding NsEvents}">
-		      <telerikChart:LineSeries.ValueBinding>
+		    <telerikChart:AreaSeries ItemsSource="{Binding NsEvents}">
+		      <telerikChart:AreaSeries.ValueBinding>
 		        <telerikChart:PropertyNameDataPointBinding PropertyName="sgv"/>
-		      </telerikChart:LineSeries.ValueBinding>
-		      <telerikChart:LineSeries.CategoryBinding>
-		        <telerikChart:PropertyNameDataPointBinding PropertyName="timeString"/>
-		      </telerikChart:LineSeries.CategoryBinding>
-		    </telerikChart:LineSeries>
+		      </telerikChart:AreaSeries.ValueBinding>
+		      <telerikChart:AreaSeries.CategoryBinding>
+		        <telerikChart:PropertyNameDataPointBinding PropertyName="dateString"/>
+		      </telerikChart:AreaSeries.CategoryBinding>
+		    </telerikChart:AreaSeries>
 		  </telerikChart:RadCartesianChart.Series>
 		</telerikChart:RadCartesianChart>
 	</Grid>
