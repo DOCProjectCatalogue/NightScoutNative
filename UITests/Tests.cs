@@ -28,10 +28,12 @@ namespace NightScoutNative.UITests
 		[Test]
 		public void WelcomeTextIsDisplayed()
 		{
-			AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin Forms!"));
-			app.Screenshot("Welcome screen.");
+			//	AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin Forms!"));
+			//	app.Screenshot("Welcome screen.");
 
-			Assert.IsTrue(results.Any());
+			//	Assert.IsTrue(results.Any());
+
+			app.Repl();	
 		}
 	}
 }

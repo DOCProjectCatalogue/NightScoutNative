@@ -1,4 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:NightScoutNative" x:Class="NightScoutNative.NightScoutNativePage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+		xmlns:local="clr-namespace:NightScoutNative" x:Class="NightScoutNative.NightScoutNativePage">
+	
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="200" />
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+
+		<Label Text="{Binding NsCurrentSGV.sgv}" HorizontalOptions="End" FontSize="50" Grid.Row="0" Grid.Column="1" />
+		<Label Text="Active Insulin: " Grid.Row="1" Grid.Column="1" />
+		<Label Text="{Binding NsCurrentPumpStatus.activeInsulin}" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" />
+
+		<telerikChart:RadCartesianChart Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+		 <!-- <telerikChart:RadCartesianChart.BindingContext>
+		    <viewMoedls:EventsViewModel/>
+		  </telerikChart:RadCartesianChart.BindingContext>-->
+		  <telerikChart:RadCartesianChart.HorizontalAxis>
+		    <telerikChart:CategoricalAxis/>
+		  </telerikChart:RadCartesianChart.HorizontalAxis>
+		  <telerikChart:RadCartesianChart.VerticalAxis>
+		    <telerikChart:NumericalAxis/>
+		  </telerikChart:RadCartesianChart.VerticalAxis>
+		  <telerikChart:RadCartesianChart.Series>
+		    <telerikChart:LineSeries ItemsSource="{Binding NsEvents}">
+		      <telerikChart:LineSeries.ValueBinding>
+		        <telerikChart:PropertyNameDataPointBinding PropertyName="sgv"/>
+		      </telerikChart:LineSeries.ValueBinding>
+		      <telerikChart:LineSeries.CategoryBinding>
+		        <telerikChart:PropertyNameDataPointBinding PropertyName="timeString"/>
+		      </telerikChart:LineSeries.CategoryBinding>
+		    </telerikChart:LineSeries>
+		  </telerikChart:RadCartesianChart.Series>
+		</telerikChart:RadCartesianChart>
+	</Grid>
 </ContentPage>

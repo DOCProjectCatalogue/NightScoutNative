@@ -41,9 +41,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
@@ -70,6 +67,63 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
       <HintPath>..\packages\Xamarin.Forms.2.0.1.6495\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v8.RenderScript">
+      <HintPath>..\packages\Xamarin.Android.Support.v8.RenderScript.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v8.RenderScript.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Chart">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Common">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Data">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Input">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.List">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.List.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Primitives">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.Xamarin.Android.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ChartRenderer.Android">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.ChartRenderer.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common.Android">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.Common.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControlsRenderer.Android">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.DataControlsRenderer.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.InputRenderer.Android">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.InputRenderer.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PrimitivesRenderer.Android">
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2016.3.822.3\lib\MonoAndroid10\Telerik.XamarinForms.PrimitivesRenderer.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

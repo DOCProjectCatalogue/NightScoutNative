@@ -15,13 +15,28 @@ namespace NightScoutNative
 			this.BindingContext = _viewModel = new EventsViewModel();
 			BackgroundColor = Xamarin.Forms.Device.OnPlatform(Xamarin.Forms.Color.White, Xamarin.Forms.Color.White, Xamarin.Forms.Color.Transparent);
 
-			this.Content = CreateChart();
+			//Blood Sugar
+			//var lblCurrentSGV = new Label();
+
+			//lblCurrentSGV.BindingContext = _viewModel.NsCurrentSGV;
+			//lblCurrentSGV.SetBinding(Label.TextProperty, "NsCurrentSGV.sgv");
+
+			//var lblPumpStatus = new Label();
+			//lblPumpStatus.SetBinding(Label.TextProperty, "NsCurrentPumpStatus.activeInsulin");
+
+			////StackLayout slMain = new StackLayout();
+			//slMain.Children.Add(lblCurrentSGV);
+			//slMain.Children.Add(lblPumpStatus);
+			//slMain.Children.Add(CreateChart());
+
+			//this.Content = slMain;
 		}
 
 		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			await _viewModel.PopulateNightScoutEvents();
+			await _viewModel.PopulateNightScoutSGVEvents();
+			await _viewModel.PopulatePumpStatus();
 		}
 
 		private  RadCartesianChart CreateChart()
@@ -39,6 +54,7 @@ namespace NightScoutNative
 			series.CategoryBinding = new PropertyNameDataPointBinding("timeString");
 
 			chart.Series.Add(series);
+
 
 			return chart;
 		}

@@ -19,7 +19,7 @@ namespace NightScoutNative
 		public double activeInsulin { get; set; }
 		public object date { get; set; }
 		public DateTime dateString { get; set; }
-		public string timeString => dateString.ToString("hh:mm");
+		public string timeString => dateString.ToLocalTime().ToString("h:mm");
 		public string device { get; set; }
 		public int? sgv { get; set; }
 		public int? trend { get; set; }
