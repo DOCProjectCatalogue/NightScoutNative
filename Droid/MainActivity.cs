@@ -7,6 +7,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Telerik.XamarinForms.Common.Android;
+
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Telerik.XamarinForms.Chart.RadCartesianChart), typeof(Telerik.XamarinForms.ChartRenderer.Android.CartesianChartRenderer))]
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Telerik.XamarinForms.Chart.RadPieChart), typeof(Telerik.XamarinForms.ChartRenderer.Android.PieChartRenderer))]
 
 namespace NightScoutNative.Droid
 {
@@ -21,6 +25,10 @@ namespace NightScoutNative.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			TelerikForms.Init();
+			new Telerik.XamarinForms.ChartRenderer.Android.PieChartRenderer();
+			new Telerik.XamarinForms.ChartRenderer.Android.CartesianChartRenderer();
 
 			LoadApplication(new App());
 		}
