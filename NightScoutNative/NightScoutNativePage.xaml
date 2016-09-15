@@ -1,59 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
-		xmlns:local="clr-namespace:NightScoutNative" x:Class="NightScoutNative.NightScoutNativePage">
-	
-
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="200" />
-
-		</Grid.RowDefinitions>
-
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-
-		<StackLayout Grid.Row="0" Grid.Column="1">
-
-			<Label Text="{Binding NsCurrentSGV.trend}" />
-			<Label Text="{Binding NsCurrentSGV.direction}" />
-			<Label Text="{Binding NsCurrentSGV.timeStringWithAMPM}" VerticalOptions="End" />
-			
-		</StackLayout>
-		<Label Text="{Binding NsCurrentSGV.sgv}" HorizontalOptions="End" FontSize="50" Grid.Row="0" Grid.Column="1" />
-		<Label Text="Active Insulin: " Grid.Row="1" Grid.Column="1" />
-		<Label Text="{Binding NsCurrentPumpStatus.activeInsulin}" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" />
-		<Label Text="{Binding NsCurrentPumpStatus.nextCalibrationTime}" HorizontalOptions="End"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
-		
-
-
-		<telerikChart:RadCartesianChart SelectionPaletteName="LightSelected" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-		  <!--<telerikChart:RadCartesianChart.BindingContext>
-		    <viewMoedls:CategoricalViewModel/>
-		  </telerikChart:RadCartesianChart.BindingContext>
--->
-		  <telerikChart:RadCartesianChart.HorizontalAxis>
-		    <telerikChart:DateTimeContinuousAxis LabelFormat="h:mm" GapLength="0.5" PlotMode="BetweenTicks" MajorStepUnit="Minute" MajorStep="15" />
-		  </telerikChart:RadCartesianChart.HorizontalAxis>
-		  <telerikChart:RadCartesianChart.VerticalAxis>
-		    <telerikChart:NumericalAxis/>
-		  </telerikChart:RadCartesianChart.VerticalAxis>
-		  <telerikChart:RadCartesianChart.Series>
-		    <telerikChart:AreaSeries ItemsSource="{Binding NsEvents}">
-		      <telerikChart:AreaSeries.ValueBinding>
-		        <telerikChart:PropertyNameDataPointBinding PropertyName="sgv"/>
-		      </telerikChart:AreaSeries.ValueBinding>
-		      <telerikChart:AreaSeries.CategoryBinding>
-		        <telerikChart:PropertyNameDataPointBinding PropertyName="dateString"/>
-		      </telerikChart:AreaSeries.CategoryBinding>
-		    </telerikChart:AreaSeries>
-		  </telerikChart:RadCartesianChart.Series>
-		</telerikChart:RadCartesianChart>
-	</Grid>
-</ContentPage>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:NightScoutNative;assembly=NightScoutNative"
+                  x:Class="NightScoutNative.NightScoutNativePage">
+    <MasterDetailPage.Master>
+        <local:MasterPage x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:DetailPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
