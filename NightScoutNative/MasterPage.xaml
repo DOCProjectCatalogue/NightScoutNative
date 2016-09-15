@@ -7,13 +7,16 @@
              Title="Settings">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+
+        	<Entry x:Name="entNSWebsite" Text="{Binding NSWebsite}" Placeholder="Your Nightscout URL" />
+
+			<!--<ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
