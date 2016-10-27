@@ -9,21 +9,36 @@ namespace NightScoutNative
 	{
 		private EventsViewModel _viewModel;
 		private RadCartesianChart chart;
+		private NightScout nsWeb;
 
 		public DetailPage()
 		{
 			InitializeComponent();
 
+			if (nsWeb == null)
+			{
+				nsWeb = new NightScout();
+				nsWeb.NSURL = "evaroo.azurewebsites.net";
+			}
+			MessagingCenter.Subscribe<MasterPage,NightScout>(this, "NightScout", (page, nsItem) =>
+		  	{
+				  
+				  nsWeb = nsItem;
+			});
+
+
+
 			this.BindingContext = _viewModel = new EventsViewModel();
 			BackgroundColor = Xamarin.Forms.Device.OnPlatform(Xamarin.Forms.Color.White, Xamarin.Forms.Color.White, Xamarin.Forms.Color.Transparent);
 
+			//nsWeb = nsWebsite;
 		}
 
 		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			await _viewModel.PopulateNightScoutSGVEvents();
-			await _viewModel.PopulatePumpStatus();
+			await _viewModel.PopulateNightScoutSGVEvents(nsWeb.NSURL);
+			await _viewModel.PopulatePumpStatus(nsWeb.NSURL);
 		}
 
 		private RadCartesianChart CreateChart()

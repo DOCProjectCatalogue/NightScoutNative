@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NightScoutNative.MasterPage"
@@ -8,15 +8,19 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
 
-        	<Entry x:Name="entNSWebsite" Text="{Binding NSWebsite}" Placeholder="Your Nightscout URL" />
+			<Entry x:Name="entT1DName" Text="{Binding T1DName, Mode=TwoWay}" Placeholder="T1D Name" />
+        	<Entry x:Name="entNSURL" Text="{Binding NSURL, Mode=TwoWay}" Placeholder="Nightscout URL" />
+			<Button x:Name="btnAdd" Text="Add" BackgroundColor="Green" TextColor="White" />
 
-			<!--<ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+			<ListView x:Name="lvWebsites" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
+<!--						<Label Text="{Binding T1DName}" />-->
+                        <TextCell Text="{Binding T1DName}" Detail="{Binding NSURL}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
         </StackLayout>
+		
     </ContentPage.Content>
 </ContentPage>

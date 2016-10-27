@@ -67,7 +67,7 @@ namespace NightScoutNative
 		//	}
 		//}
 
-		public async Task PopulateNightScoutSGVEvents()
+		public async Task PopulateNightScoutSGVEvents(string sNSWebsite)
 		{
 			//var data = new ObservableCollection<NightScoutEvent>();
 
@@ -76,7 +76,7 @@ namespace NightScoutNative
 
 			ObservableCollection<NightScoutEvent> returnEvents = new ObservableCollection<NightScoutEvent>();
 
-			string sRestUrl = "https://lydia-nightscout.azurewebsites.net/api/v1/entries/sgv.json?[count]=20";
+			string sRestUrl = $"https://{sNSWebsite}/api/v1/entries/sgv.json?[count]=20";
 			var uri = new Uri(string.Format(sRestUrl, string.Empty));
 
 			var response = await client.GetAsync(uri);
@@ -98,12 +98,12 @@ namespace NightScoutNative
 			//return data;
 		}
 
-		public async Task PopulatePumpStatus()
+		public async Task PopulatePumpStatus(string sNSWebsite)
 		{
 			client = new HttpClient();
 			client.MaxResponseContentBufferSize = 256000;
 
-			string sRestUrl = "https://lydia-nightscout.azurewebsites.net/api/v1/entries.json?[type]=pump_status&[count]=1";
+			string sRestUrl = $"https://{sNSWebsite}/api/v1/entries.json?[type]=pump_status&[count]=1";
 
 			var uri = new Uri(string.Format(sRestUrl, string.Empty));
 

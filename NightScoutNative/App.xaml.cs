@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Diagnostics;
+using Plugin.AzurePushNotifications;
+using Xamarin.Forms;
 
 namespace NightScoutNative
 {
@@ -9,6 +11,18 @@ namespace NightScoutNative
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new NightScoutNativePage());
+
+			//PushNotificationCredentials.Tags = new string[] {"evaroo.azurewebsites.net" };
+			//PushNotificationCredentials.GoogleApiSenderId = "google sender id";
+			//PushNotificationCredentials.AzureNotificationHubName = "Push-Notification-Hub";
+			//PushNotificationCredentials.AzureListenConnectionString = "Endpoint=sb://nspush.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=zAp47KnaK0SguPp+gCp0dgY9RVmqm2wI/51lBg4Nw8w=";
+
+			//CrossAzurePushNotifications.Current.RegisterForAzurePushNotification();
+
+			//CrossAzurePushNotifications.Current.OnMessageReceived += (sender, ev) =>
+			//{
+			//	Debug.WriteLine(ev.Content);
+			//};
 		}
 
 		protected override void OnStart()
@@ -25,6 +39,8 @@ namespace NightScoutNative
 		{
 			// Handle when your app resumes
 		}
+
+
 	}
 }
 
